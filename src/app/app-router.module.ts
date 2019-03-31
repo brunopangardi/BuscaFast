@@ -7,9 +7,9 @@ import { EtapasCadastroComponent } from './etapas-cadastro/etapas-cadastro.compo
 
 let rotas = [
   {path: "dashboard", component: DashboardComponent},
-  {path: "anuncio", component: AnuncioComponent},
+  {path: "aaa", component: AnuncioComponent},
   {path: "login", component: LoginComponent},
-  {path: "NovaAssinatura", component: EtapasCadastroComponent},
+  {path: "conta/nova", component: EtapasCadastroComponent},
   {path: "**", redirectTo: "/login"}
 ]
 
