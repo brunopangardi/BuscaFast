@@ -13,12 +13,12 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Crie sua conta!</h1>
                                 </div>
-                                <form class="user">
+                                <form #formCadastroConta="ngForm" (ngSubmit)="salvarConta()" class="user">
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="email"
+                                        <input type="email" [(ngModel)]="email" ngModel [email]="true" name="email" required email class="form-control form-control-user" id="email"
                                             placeholder="E-mail">
                                     </div>                                                                   
-                                    <input (click)="salvar()" type="button" class="btn btn-primary btn-user btn-block" value="Cadastrar">  
+                                    <button [disabled]="!formCadastroConta.valid" class="btn btn-primary btn-user btn-block">Confirmar</button>
                                     <hr>
                                 </form>
                                 <hr>

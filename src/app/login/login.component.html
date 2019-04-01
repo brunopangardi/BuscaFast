@@ -15,13 +15,14 @@
                 <div class="text-center">
                   <h1 class="h4 text-gray-900 mb-4">Seja Bem-vindo!</h1>
                 </div>
-                <form class="user">
+                <form #formLogin="ngForm" (ngSubmit)="realizarLogin(formLogin)" class="user">
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-user" id="" aria-describedby="emailHelp"
-                      placeholder="E-mail...">
+                    <input type="text" class="form-control form-control-user" id="email" name="email"
+                      aria-describedby="emailHelp" placeholder="E-mail" [(ngModel)]="email" required email>
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-user" id="" placeholder="senha">
+                    <input type="password" [(ngModel)]="senha" name="senha" required
+                      class="form-control form-control-user" id="" placeholder="senha" minlength="8">
                   </div>
                   <div class="form-group">
                     <div class="custom-control custom-checkbox small">
@@ -29,11 +30,16 @@
                       <label class="custom-control-label" for="customCheck">Lembrar senha</label>
                     </div>
                   </div>
-                  <a routerLink="/home" class="btn btn-primary btn-user btn-block">
+                  <button [disabled]="!formLogin.valid" class="btn btn-primary btn-user btn-block">
                     Entrar
-                  </a>
+                  </button>
                   <hr>
+                  <div>
+                    {{formLogin.value | json}}
+                    {{formLogin.valid | json}}
+                  </div>
                 </form>
+
                 <hr>
                 <div class="text-center">
                   <a class="small" routerLink="/">Esqueceu a senha?</a>

@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
+import { ToastrModule} from 'node_modules/ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule} from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { BarraNavegacaoComponent } from './barra-navegacao/barra-navegacao.component';
@@ -18,6 +22,7 @@ import { CadastrarContaComponent } from './etapas-cadastro/cadastrar-conta/cadas
 import { CadastroDadosClienteComponent } from './etapas-cadastro/cadastro-dados-cliente/cadastro-dados-cliente.component';
 import { CadastroPagamentoClienteComponent } from './etapas-cadastro/cadastro-pagamento-cliente/cadastro-pagamento-cliente.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,14 +36,17 @@ import { CadastroPagamentoClienteComponent } from './etapas-cadastro/cadastro-pa
     AreaLogadaComponent,
     CadastrarContaComponent,
     CadastroDadosClienteComponent,
-    CadastroPagamentoClienteComponent 
+    CadastroPagamentoClienteComponent
   ],
   imports: [
     BrowserModule,
     AppRouterModule,
     HttpClientModule,
-    MatRadioModule
-  ],  
+    MatRadioModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    FormsModule    
+  ],
   providers: [AnuncioService],
   bootstrap: [AppComponent]
 })
