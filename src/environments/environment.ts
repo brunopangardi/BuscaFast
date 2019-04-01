@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  UrlAPI: "http://www.devup.com.br/php/api-dashboard/api/"
+  UrlAPI: "http://www.devup.com.br/php/api-dashboard/api/",
+  UrlCep: "https://viacep.com.br/ws/"
 };
 
 /*

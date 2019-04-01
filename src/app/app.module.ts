@@ -5,7 +5,6 @@ import { ToastrModule} from 'node_modules/ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule} from '@angular/forms';
 
-
 import { AppComponent } from './app.component';
 import { BarraNavegacaoComponent } from './barra-navegacao/barra-navegacao.component';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
@@ -21,6 +20,7 @@ import { AreaLogadaComponent } from './area-logada/area-logada.component';
 import { CadastrarContaComponent } from './etapas-cadastro/cadastrar-conta/cadastrar-conta.component';
 import { CadastroDadosClienteComponent } from './etapas-cadastro/cadastro-dados-cliente/cadastro-dados-cliente.component';
 import { CadastroPagamentoClienteComponent } from './etapas-cadastro/cadastro-pagamento-cliente/cadastro-pagamento-cliente.component';
+import { CadastroDadosClienteService } from './etapas-cadastro/cadastro-dados-cliente/cadastro-dados-cliente.service';
 
 
 @NgModule({
@@ -45,9 +45,9 @@ import { CadastroPagamentoClienteComponent } from './etapas-cadastro/cadastro-pa
     MatRadioModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    FormsModule    
+    FormsModule,   
   ],
-  providers: [AnuncioService],
+  providers: [AnuncioService, CadastroDadosClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
